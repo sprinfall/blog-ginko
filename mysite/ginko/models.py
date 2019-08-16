@@ -11,13 +11,16 @@ from django.db import models
 #-------------------------------------------------------------------------------
 
 # TODO
-# 1. Case insensitive
+# - Primary key
+#   不要以 name 为主键，使用自增长的id，便于调整、更新名字。
+# - Case insensitive
 #    "c++" == "C++", "travel" == "TRAVEL", etc.
 #    Convert a given tag name to lower case then use it as primary key.
-# 2. Alias
+# - Alias
 #    E.g., "徕卡" == "Leica"
 
 class Tag(models.Model):
+    # TODO: unique=True
     name = models.CharField(max_length=32)
 
     def __str__(self):

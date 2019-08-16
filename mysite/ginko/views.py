@@ -7,9 +7,10 @@ from .models import Post
 
 
 class IndexView(generic.ListView):
-    # Default template name: post_list.html
+    # Default: post_list.html
     template_name = 'ginko/index.html'
-    # Default context variable is `post_list`
+
+    # Default: post_list
     context_object_name = 'latest_post_list'
 
     def get_queryset(self):
@@ -18,6 +19,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Post
-    # Default template name: post_detail.html
+
+    # Default: post_detail.html
     template_name = 'ginko/detail.html'
 
